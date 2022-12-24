@@ -1,51 +1,45 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import {Link} from 'react-scroll'
+// import React, { useState } from "react";
+// import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import React from "react";
 
 const NavBar = () => {
-  const [nav, setNav] = useState(false);
+  // const [nav, setNav] = useState(false);
 
   const links = [
     {
       id: 1,
-      link: "test",
-    },
-    {
-      id: 2,
-      link: "about",
-    },
-    {
-      id: 3,
-      link: "portfolio",
-    },
-    {
-      id: 4,
-      link: "experience",
-    },
-    {
-      id: 5,
-      link: "contact",
+      link: "tienLen",
     },
   ];
 
   return (
-    <div className="flex justify-between items-center px-4 w-full h-20 text-white bg-black fixed">
+    <div className="flex items-center px-4 w-full h-20 text-white bg-black fixed">
       <div>
-        <h1 className="text-5xl font-signature ml-2">Ke</h1>
+        <h1 className="text-5xl font-signature ml-2">BaBenGame</h1>
       </div>
 
-      <ul className="hidden md:flex">
+      <a
+        href="../pages/tienLen"
+        className="px-10 cursor-pointer capitalize font-bold text-lg text-gray-300 hover:scale-x-125 duration-200"
+      >
+        Tien Len
+      </a>
+
+      {/* <Link to={"../pages/tienLen"}>Test</Link> */}
+
+      {/* <ul className="md:flex">
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200"
+            className="px-10 cursor-pointer capitalize font-bold text-lg text-gray-300 hover:scale-x-125 duration-200"
           >
-            <Link to={link} smooth duration={500}>{link}</Link>
+            <Link to={link}>Tien Len</Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
-      <div
+      {/* <div
         onClick={() => setNav(!nav)}
         className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
       >
@@ -59,11 +53,18 @@ const NavBar = () => {
               key={id}
               className="px-4 cursor-pointer capitalize py-5 text-4xl"
             >
-              <Link onClick={()=> setNav(!nav)} to={link} smooth duration={500}>{link}</Link>
+              <Link
+                onClick={() => setNav(!nav)}
+                to={link}
+                smooth
+                duration={500}
+              >
+                {link}
+              </Link>
             </li>
           ))}
         </ul>
-      )}
+      )} */}
     </div>
   );
 };
